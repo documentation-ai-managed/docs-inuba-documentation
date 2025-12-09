@@ -1,0 +1,102 @@
+---
+title: Welcome to Inuba Documentation
+description: An overview of Inuba, your default documentation space for organizing and managing project documentation efficiently.
+---
+
+## What is Inuba?
+
+Inuba provides your default documentation space. You organize and manage all project documentation here with ease. Build structured guides, API references, and tutorials using powerful MDX components.
+
+Inuba supports rich content like interactive tabs, steps, and code examples. You create self-contained pages that load quickly and engage users.
+
+## Key Benefits
+
+Inuba streamlines your documentation workflow. Discover core advantages through these features.
+
+<Columns cols={3}>
+  <Card title="Centralized Organization" icon="folder" href="/docs/organization">
+    Group docs by projects. Use hierarchies, tags, and search to find content instantly.
+  </Card>
+  <Card title="Rich Components" icon="components" href="/docs/components">
+    Embed `<Steps>`, `<Tabs>`, `<CodeGroup>`, and more. Create interactive experiences without custom code.
+  </Card>
+  <Card title="Fast Collaboration" icon="users" href="/docs/collaboration">
+    Invite team members. Review changes and publish updates in real-time.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Customize your space with brand colors like `#3B82F6` for headers and accents.
+</Callout>
+
+## Getting Oriented with the Platform
+
+Follow these steps to start using Inuba effectively.
+
+<Steps>
+  <Step title="Create Your Space" icon="plus">
+    Sign up at `inuba.com` and select "New Documentation Space". Name it after your project, like "MyApp Docs".
+  </Step>
+  <Step title="Add Your First Page" icon="file-text">
+    Click "New Page" and choose `introduction.mdx`. Add frontmatter with `title` and `description`.
+
+    ```yaml
+    ---
+    title: My First Page
+    description: Start documenting here.
+    ---
+    ```
+  </Step>
+  <Step title="Install Components" icon="download">
+    No installation needed—components work out-of-the-box. Test with a `<Callout>` for notes.
+  </Step>
+</Steps>
+
+Explore platform-specific setups next.
+
+<Tabs>
+  <Tab title="Web Dashboard" icon="globe">
+    Access your space at `https://app.inuba.com/spaces/your-space`. Use the editor for visual previews.
+  </Tab>
+  <Tab title="GitHub Sync" icon="github">
+    Connect your repo. Push MDX files to auto-deploy docs.
+
+    <CodeGroup tabs="CLI,API">
+      ```bash
+      git remote add inuba https://github.com/inuba/your-docs.git
+      git push inuba main
+      ```
+      ```javascript
+      await fetch('https://api.inuba.com/spaces/your-space/sync', {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${YOUR_TOKEN}` }
+      });
+      ```
+    </CodeGroup>
+  </Tab>
+  <Tab title="CLI Tool" icon="terminal">
+    Install the Inuba CLI for local development.
+
+    ```bash
+    npm install -g @inuba/cli
+    inuba init my-docs
+    inuba dev
+    ```
+  </Tab>
+</Tabs>
+
+## Frequently Asked Questions
+
+<ExpandableGroup>
+  <Expandable title="How do I customize themes?" default-open="true">
+    Edit `theme.config.js` in your space root. Set `primaryColor: '#3B82F6'`.
+  </Expandable>
+  <Expandable title="Can I export docs?">
+    Yes, export to PDF, HTML, or Markdown via the dashboard export button.
+  </Expandable>
+  <Expandable title="What about SEO?">
+    Inuba generates meta tags from frontmatter. Add `slug` and `keywords` for better search rankings.
+  </Expandable>
+</ExpandableGroup>
+
+Start building your docs today. Navigate to [organization](/docs/organization) for next steps.

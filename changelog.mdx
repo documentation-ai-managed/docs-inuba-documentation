@@ -1,0 +1,148 @@
+---
+title: Changelog
+description: Track the latest updates, new features, and improvements to Inuba Documentation.
+---
+
+## Recent Updates
+
+Stay informed about changes in Inuba Documentation. You access the latest releases here, including new components, performance improvements, and bug fixes. Subscribe to notifications to get updates directly.
+
+<Callout kind="info">
+  Check this page regularly or enable notifications in your account settings to stay current with Inuba Documentation enhancements.
+</Callout>
+
+## Quick Upgrade Guide
+
+Follow these steps to upgrade to the latest version of Inuba Documentation.
+
+<Steps>
+  <Step title="Backup Your Site" icon="database">
+    Export your current documentation site.
+
+    ```bash
+    npx inuba-export --site=my-docs
+    ```
+  </Step>
+  <Step title="Update Package" icon="package">
+    Install the latest version using your package manager.
+  </Step>
+  <Step title="Rebuild and Deploy" icon="rocket">
+    <Tabs>
+      <Tab title="Vercel" icon="cloud">
+        ```bash
+        vercel --prod
+        ```
+      </Tab>
+      <Tab title="Netlify" icon="monitor">
+        ```bash
+        netlify deploy --prod --dir=dist
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Feature Highlights
+
+Discover key features added in recent releases through these quick links.
+
+<Columns cols={3}>
+  <Card title="New Components" icon="package" href="/docs/components">
+    Explore Tabs, Steps, and Update components for richer docs.
+  </Card>
+  <Card title="Performance Boost" icon="zap" href="/docs/performance">
+    Reduced build times by 40% with optimized rendering.
+  </Card>
+  <Card title="Search Improvements" icon="search" href="/docs/search">
+    Enhanced full-text search with fuzzy matching.
+  </Card>
+</Columns>
+
+## Release History
+
+Review detailed changelogs for each version below.
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added `<Tabs>` and `<Steps>` components for better tutorials and platform-specific guides
+- Introduced `<Columns>` layout for feature grids and navigation cards
+- Enhanced search with autocomplete and category filters
+
+## Improvements
+
+- Optimized MDX parsing speed by 30% for larger sites
+- Improved mobile responsiveness for all components
+
+## Bug Fixes
+
+- Fixed parsing errors with nested code blocks
+- Resolved icon rendering issues in dark mode
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Released `<Update>` component for streamlined changelogs
+- Added `<Callout>` with multiple kinds (`info`, `tip`, `success`, `alert`, `danger`)
+- Support for custom brand colors like `#3B82F6`
+
+## Bug Fixes
+
+- Corrected frontmatter YAML parsing for descriptions with special characters
+- Fixed heading hierarchy enforcement (no more H1 in body content)
+
+<CodeGroup tabs="CLI,Config">
+```bash
+# Update via CLI
+npx inuba@1.1.0 upgrade
+```
+```javascript
+// inuba.config.js
+export default {
+  brandColor: '#3B82F6',
+  components: { update: true }
+};
+```
+</CodeGroup>
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["breaking", "feature"]}>
+
+## New Features
+
+- Initial release with core MDX components: `<Card>`, `<Request>`, `<Response>`
+- Full support for Mermaid diagrams as code blocks
+- Integrated Lucide icons for all visual elements
+
+## Breaking Changes
+
+- Removed legacy `<Mermaid>` component; use code blocks only
+- Enforced strict escaping for `{`, `}`, `<`, `>` in prose
+
+## Improvements
+
+- Added verification checklist for zero parsing errors
+
+</Update>
+
+<Expandable title="How to Contribute to Changelogs" default-open="false">
+
+You contribute changes by following our release process.
+
+1. Fork the repository
+2. Implement features or fixes
+3. Add an entry to this changelog using the `<Update>` format
+4. Submit a pull request
+
+For syntax details, see the [components guide](/docs/components).
+
+</Expandable>
+
+<Callout kind="tip">
+  Use `tags={["feature"]}` arrays for categorization. Available tags include `feature`, `bugfix`, `breaking`, `improvement`, and `security`.
+</Callout>

@@ -1,0 +1,110 @@
+---
+title: Quickstart Guide
+description: Get up and running with Inuba in minutes by setting up your first documentation space and creating your initial content.
+---
+
+## Overview
+
+Inuba lets you create beautiful, fast documentation sites without hassle. Follow these steps to sign up, create your first documentation space, and publish your initial document. You complete setup in under 5 minutes.
+
+<Callout kind="tip">
+  No credit card required for the free tier. Upgrade anytime for custom domains and advanced features.
+</Callout>
+
+## Prerequisites
+
+Ensure you have:
+- A modern browser (Chrome, Firefox, Safari)
+- Node.js `{>=18}` if using CLI (optional)
+- Git account for version control integration
+
+## Step-by-Step Setup
+
+<Steps>
+  <Step title="Create Account" icon="user-plus">
+
+    Sign up via web dashboard or CLI.
+
+    <Tabs>
+      <Tab title="Web UI" icon="globe">
+        1. Visit [app.inuba.com](https://app.inuba.com)
+        2. Click **Sign Up**
+        3. Enter email and password
+        4. Verify email inbox
+      </Tab>
+      <Tab title="CLI" icon="terminal">
+        ```bash
+        npm create inuba@latest my-docs --sign-up
+        ```
+        Follow interactive prompts for email and auth.
+      </Tab>
+    </Tabs>
+
+  </Step>
+
+  <Step title="Set Up Documentation Space" icon="folder-plus">
+
+    Create a new space for your project docs.
+
+    <CodeGroup tabs="Dashboard,CLI">
+      ```bash
+      # Dashboard: Navigate to Spaces > New Space
+      # Name: "My Project Docs"
+      # Template: MDX Documentation
+      ```
+
+      ```bash
+      cd my-docs
+      npx inuba space create "My Project Docs"
+      ```
+    </CodeGroup>
+
+    Select brand color `#3B82F6` during setup.
+
+  </Step>
+
+  <Step title="Add Your First Document" icon="file-plus">
+
+    Create `quickstart.mdx` in your space root.
+
+    ```mdx
+    ---
+    title: Quickstart
+    description: Get started fast.
+    ---
+
+    ## Hello World
+
+    Your first doc is live!
+    ```
+
+    Preview with `npx inuba dev` or publish via dashboard **Publish** button.
+
+  </Step>
+</Steps>
+
+## Next Steps
+
+Explore these features to enhance your docs.
+
+<Columns cols={3}>
+  <Card title="Customize Theme" icon="palette" href="/docs/themes">
+    Adjust colors, fonts, and layouts with simple config.
+  </Card>
+  <Card title="Add Search" icon="search" href="/docs/search">
+    Enable full-text search across all pages.
+  </Card>
+  <Card title="Version Control" icon="git-branch" href="/docs/git">
+    Connect GitHub for seamless CI/CD workflows.
+  </Card>
+</Columns>
+
+<Expandable title="Troubleshooting Common Issues" default-open="false">
+
+- **Port conflict?** Run `npx inuba dev --port 3001`
+- **Build fails?** Check Node version: `{node --version}`
+- **Custom domain?** See [Domains guide](/docs/domains)
+
+</Expandable>
+
+Your Inuba site is now live! Share the generated URL with your team.
